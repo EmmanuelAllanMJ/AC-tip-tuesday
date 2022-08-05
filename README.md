@@ -1,6 +1,6 @@
-# Class based vs Function based components in React
+# Class based vs Functional based components in React
 
-## Why do we need Class based components?
+## Why do you need to know about Class based components?
 
 - After **React 16.8 (2019)**, **React hooks** was introduced and in most modern React projects, you would pretty much work with Functional Components only. You might never build a single class-based Component.
 
@@ -42,22 +42,30 @@ class Product extends Component {
 </tr>
 <tr>
 <td>
+  
 ```javascript
 const [state,setState] = useState(0)
 ```
+  
 </td>
 <td>
+  
 ```javascript
 constructor(){
   super();
    this.state = {counter:0};
 }
 ```
+  
 </td>
 </tr>
 </table>
+
 ## Counter App Implication
+
 ### Functional based component
+
 ![image](https://user-images.githubusercontent.com/90669430/183123373-1a622209-3f2d-489b-a693-1a9434e84ee9.png)
 ### Class based component
+
 ![image](https://user-images.githubusercontent.com/90669430/183124147-a6f13f72-7f96-4a85-8638-058b6edfa104.png)
