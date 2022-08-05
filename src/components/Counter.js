@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Counter() {
-  return <div>Counter</div>;
-}
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <h3>Counter App using Functional Component</h3>
+      <h2>{count}</h2>
+      <button onClick={increase}>Add</button>
+    </div>
+  );
+};
 
 export default Counter;
