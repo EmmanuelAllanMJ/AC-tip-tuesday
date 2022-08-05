@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Class based vs Function based components in React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Why do we need Class based components?
 
-## Available Scripts
+- After **React 16.8 (2019)**, **React hooks** was introduced and in most modern React projects, you would pretty much work with Functional Components only. You might never build a single class-based Component.
 
-In the project directory, you can run:
+- Before that, **Functional Component** were considered as **state-less**, was generally used for simpler components that would just display info passed into it, whereas a Class Component was what you would use when you needed to store state in your component.
 
-### `npm start`
+- You still will find class-based components in the wild, for example if you are working with a code-base which has been around 5+ years, you will see mostly class-based components. So you need to know how everything works in a class-based component in order to interact with it.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Difference between class and functional components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<table>
+<tr>
+<td><strong> Functional Components <strong/></td>
+<td><strong> Class-based Components <strong/></td>
+</tr>
+<tr>
+<td>Components are regular JavaScript functions which return renderable results (typically JSX)</td>  
+<td>Components can also be defined as JS classes where a render() method  defines the to-be-rendered output </td>
+</tr>
+<tr>
+<td>
 
-### `npm test`
+```javascript
+function Product(props) {
+  return <h2>A Product!</h2>;
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</td>
+<td>
 
-### `npm run build`
+```javascript
+class Product extends Component {
+  render() {
+    return <h2>A Product!</h2>
+  }
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</td>
+</tr>
+<tr>
+<td>
+```javascript
+const [state,setState] = useState(0)
+```
+</td>
+<td>
+```javascript
+constructor(){
+  super();
+   this.state = {counter:0};
+}
+```
+</td>
+</tr>
+</table>
+## Counter App Implication
+### Functional based component
+![image](https://user-images.githubusercontent.com/90669430/183123373-1a622209-3f2d-489b-a693-1a9434e84ee9.png)
+### Class based component
+![image](https://user-images.githubusercontent.com/90669430/183124147-a6f13f72-7f96-4a85-8638-058b6edfa104.png)
